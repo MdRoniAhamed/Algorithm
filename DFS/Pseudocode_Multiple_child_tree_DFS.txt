@@ -1,0 +1,12 @@
+// Multiple child / Multiple tree 
+void dfs(int node){ // binary tree
+    cout<<node<<endl;
+    //base case
+    if node does not have any child:
+        return;
+
+    // general case 
+    for all child of node:
+        dfs(child);
+    
+}

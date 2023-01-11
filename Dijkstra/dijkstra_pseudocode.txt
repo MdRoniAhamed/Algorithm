@@ -1,0 +1,47 @@
+// Input -> a weighted graph and a source
+// Output -> distance of all nodes from the sourcee
+
+/*
+u -> v
+
+if d[u] + c(u, v) < d[v]:
+    d[v] = d[u] + c(u, v)
+
+*/
+
+space complexity -> 0(n) + 0(n) + O(1)
+            => O(n) == O(m)
+Time complexity -> O(n) + O(n^2) + O(m)
+            => O(n^2); === O( E log V) == (m log n)
+
+n -> v
+m -> E 
+
+
+- create a distance array "d"
+- initialize all values of "d" to infinity 
+- d[src] = 0
+- create a visited array and mark all nodes as unvisited
+- take an empty reverse priority_queue "pq"
+pq.push({0,src})
+
+- while the priority_queue is not empty:
+    - head_distance, head = pd.front()
+    - pd.pop()
+    if visited[head] == 1: ignore
+    - visited[head] = 1
+    - for all adj_node of node:
+        - if d[head] + c(head, adj_node) < d[adj_node]:
+            -d[adj_node] = d[head] + c(head, adj_node)
+            -pq.push({d[adj_node], adj_node});
+
+- output array "d" 
+
+Time complexity:
+O(n) + O( E log E) = O(E log E)
+-> O(|E| log |E|)
+-> O(|E| log |V^2|)
+-> O(2|E| log |V|)
+-> O(|E| log |V|)  [log base 2]
+
+
