@@ -21,7 +21,7 @@ void dijkstra(int src)
         {
             if (visited[j] == 1)
                 continue;
-            if (selected == -1 || d[selected] < d[j])
+            if (selected == -1 || d[selected] > d[j])
             {
                 selected = j;
             }

@@ -10,10 +10,10 @@ Output -> All pair shortest distance
 
 
 - create a distance_matrix "d" where d[i][j] = x where there is a direct
-    edge from node "i" to node "j" and the cost is "x"
-- for all node "i" d[i][i] = 0
 - for all node "i" & "j" where there isn't any direct edge from "i" to "j",
     d[i][j] = INF
+    edge from node "i" to node "j" and the cost is "x"
+- for all node "i" d[i][i] = 0
 
 
 - for all node "k"
